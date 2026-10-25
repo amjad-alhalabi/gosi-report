@@ -139,6 +139,62 @@ footer p{margin:0 0 6px;max-width:90ch}
 
 @media (max-width:860px){.grid2,.grid3{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.mix{grid-template-columns:repeat(2,minmax(0,1fr))}.chart.tall{height:460px}}
 @media (max-width:480px){.sent-row{grid-template-columns:minmax(0,1fr)}.chev{width:260px;height:260px}}
+
+/* ---- identity backgrounds & mobile refinements ---- */
+:root{--pat:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.045%22%3E%3Cpath%20d%3D%22M8%2010%20Q24%2026%2040%2040%20Q24%2054%208%2070%20L20%2070%20Q36%2055%2052%2040%20Q36%2025%2020%2010Z%22/%3E%3Cpath%20d%3D%22M112%2010%20Q96%2026%2080%2040%20Q96%2054%20112%2070%20L100%2070%20Q84%2055%2068%2040%20Q84%2025%20100%2010Z%22/%3E%3C/g%3E%3C/svg%3E")}
+.hero{background:radial-gradient(120% 90% at 0% 100%,rgba(3,191,0,.18),transparent 55%),var(--pat) 0 0/120px 120px repeat,var(--band)}
+.hero .wrap{padding-block:48px 40px}
+.chev{inset-inline-start:auto;inset-inline-end:-70px;bottom:auto;top:28px;width:300px;height:300px;opacity:1;filter:drop-shadow(0 18px 40px rgba(0,0,0,.25))}
+.hero h1{max-width:20ch}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:13px;color:var(--band-muted)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(3,191,0,.25)}
+.kpi{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));position:relative;overflow:hidden}
+.kpi::after{content:"";position:absolute;inset-inline-end:-18px;bottom:-18px;width:64px;height:64px;background:var(--green);opacity:.12;clip-path:polygon(0 0,35% 0,100% 50%,35% 100%,0 100%,62% 50%)}
+.sub-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,auto));justify-content:start;gap:8px 26px}
+.band{background:var(--pat) 0 0/120px 120px repeat,var(--band);color:var(--band-ink);box-shadow:0 0 0 100vmax var(--band);clip-path:inset(0 -100vmax);margin-top:44px;padding-block:44px}
+.band .sec-h h2{color:#fff} .band .sec-h p{color:var(--band-muted)}
+.band .panel{background:var(--surface);color:var(--ink)}
+.band .alert{background:var(--surface)}
+.band .cards .card{box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.panel{box-shadow:0 1px 2px rgba(0,0,40,.04),0 8px 24px -12px rgba(0,0,60,.10)}
+section:not(.band) + section.band{}
+.foot{background:radial-gradient(90% 120% at 100% 0%,rgba(3,191,0,.14),transparent 60%),var(--pat) 0 0/120px 120px repeat,var(--band);color:var(--band-muted)}
+.foot .wrap{padding-block:34px 44px;display:grid;gap:10px}
+.foot p{margin:0;max-width:90ch;font-size:13px}
+.foot .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--f-display);font-weight:700;font-size:18px}
+.foot .brand svg{width:22px;height:22px}
+.nav .wrap{-webkit-mask-image:linear-gradient(to left,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);mask-image:linear-gradient(to left,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%)}
+.nav a.on{background:var(--navy);color:#fff}
+.toTop{position:fixed;inset-inline-start:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:8;width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,40,.25);opacity:0;pointer-events:none;transition:opacity .2s}
+.toTop.show{opacity:1;pointer-events:auto}
+.mlist{display:none}
+.mrow{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.mrow:last-child{border-bottom:0}
+.mrow .rk{font-family:var(--f-display);font-weight:700;color:var(--muted);text-align:center}
+.mrow .who{min-width:0}
+.mrow .who b{display:block;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mrow .who span{font-size:12px;color:var(--muted);direction:ltr;display:inline-block}
+.mrow .big{text-align:end;font-family:var(--f-display);font-weight:700;font-size:16px}
+.mrow .big small{display:block;font-family:var(--f-body);font-weight:500;font-size:11px;color:var(--muted)}
+.mrow .sub{grid-column:2 / 4;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted);align-items:center}
+.mrow .sub b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.sub-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.chev{width:200px;height:200px;inset-inline-end:-80px;top:10px;opacity:.55}}
+@media (max-width:640px){
+  .hero .wrap{padding-block:28px 26px}
+  .kpis{gap:10px;margin-top:20px} .kpi{padding:12px 14px} .kpi .val{font-size:28px}
+  section{padding-block:30px 4px} .band{margin-top:30px;padding-block:30px}
+  .panel{padding:16px}
+  .chart{height:260px} .chart.tall{height:470px}
+  table{display:none} .mlist{display:block}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;margin-inline:-2px}
+  .tabs .tab{white-space:nowrap;flex:0 0 auto}
+  .sec-h{margin-bottom:14px} .sec-h .tabs{width:100%}
+  .frow{flex-wrap:nowrap} .frow .lab{min-width:auto}
+  .frow .tabs{flex:1 1 auto;min-width:0}
+  .frow:last-child{flex-wrap:wrap}
+  .mix .num{font-size:22px}
+}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 </style>
@@ -151,6 +207,7 @@ html{scroll-behavior:smooth;scroll-padding-top:64px}
     <div class="eyebrow"><b>التأمينات الاجتماعية</b><span>·</span><span>تقرير رصد الحديث</span></div>
     <h1>رصد الحديث حول إعلان صرف مبلغ البدل الإضافي لمعاشات المتقاعدين ومعاش المتقاعد المتوفى</h1>
     <div class="period">25 أكتوبر 2026 · من 2:00 م حتى 10:30 م · منصة X</div>
+    <div class="badge"><i></i>آخر تحديث: 10:30 مساءً</div>
     <div class="kpis" id="kpis"></div>
     <div class="sub-kpis" id="subkpis"></div>
   </div>
@@ -207,7 +264,7 @@ html{scroll-behavior:smooth;scroll-padding-top:64px}
     <div class="tbl-wrap" id="tbl"></div>
   </section>
 
-  <section id="gosi">
+  <section id="gosi" class="band">
     <div class="sec-h"><h2>الانطباعات المتعلقة بالتأمينات الاجتماعية</h2></div>
     <div class="grid2">
       <div class="panel" id="gosiStats"></div>
@@ -226,12 +283,13 @@ html{scroll-behavior:smooth;scroll-padding-top:64px}
     <div class="cards" id="cards"></div>
     <div class="more"><button class="btn" id="moreBtn" type="button">عرض المزيد</button></div>
   </section>
-
-  <footer>
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="brand"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="#03BF00" d="M0 0 Q30 30 62 50 Q30 70 0 100 L18 100 Q48 72 78 50 Q48 28 18 0Z"/></svg>التأمينات الاجتماعية · تقرير رصد الحديث</div>
     <p>المنهجية: حجم الحديث وعدد الحسابات والوصول والمشاهدات والظهور مأخوذة من لوحة مؤشرات أداة الرصد للفترة من 2:00 م حتى 10:30 م. أما الانطباعات ونسبها والتفاعل والجداول والنماذج فمحسوبة من ملفات الرصد المصدّرة بعد دمجها وحذف المكرر (17,151 منشورًا مصنّفًا).</p>
     <p>صُنّفت الانطباعات بقواعد مبنية على نص كل منشور، واعتُبر النشر الإخباري للقرار إيجابيًا، وروجعت النماذج المعروضة يدويًا. النماذج المعلّمة «من الرصد الساعي» مأخوذة من تقارير الرصد الساعية ولا تتوفر لها أرقام مشاهدات.</p>
-  </footer>
-</main>
+  </div></footer>
+<button class="toTop" id="toTop" type="button" aria-label="العودة للأعلى">↑</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
@@ -304,7 +362,10 @@ const COLS = {
 function renderTable(k){
   const cols=COLS[k], rows=D[k];
   $('#tbl').innerHTML = `<table><thead><tr><th class="n">#</th><th>الحساب</th>${cols.map(c=>`<th class="n">${c[0]}</th>`).join('')}<th class="n">الانطباع</th><th class="n">المنشور</th></tr></thead><tbody>${
-    rows.map((r,i)=>`<tr><td class="n">${i+1}</td><td><span class="acc">${esc(r.name)}</span><span class="hd">${esc(r.handle)}</span></td>${cols.map(c=>`<td class="n">${c[1]==='n'?fmt(r.n):ar(r[c[1]])}</td>`).join('')}<td class="n"><span class="pill ${SC[r.s]}">${r.s}</span></td><td class="n"><a class="lnk" href="${r.url}" target="_blank" rel="noopener">عرض ↗</a></td></tr>`).join('')}</tbody></table>`;
+    rows.map((r,i)=>`<tr><td class="n">${i+1}</td><td><span class="acc">${esc(r.name)}</span><span class="hd">${esc(r.handle)}</span></td>${cols.map(c=>`<td class="n">${c[1]==='n'?fmt(r.n):ar(r[c[1]])}</td>`).join('')}<td class="n"><span class="pill ${SC[r.s]}">${r.s}</span></td><td class="n"><a class="lnk" href="${r.url}" target="_blank" rel="noopener">عرض ↗</a></td></tr>`).join('')}</tbody></table>
+  <div class="mlist">${rows.map((r,i)=>{const main=cols[0], rest=cols.slice(1);
+    return `<a class="mrow" href="${r.url}" target="_blank" rel="noopener"><span class="rk">${i+1}</span><span class="who"><b>${esc(r.name)}</b><span>${esc(r.handle)}</span></span><span class="big">${main[1]==='n'?fmt(r.n):ar(r[main[1]])}<small>${main[0]}</small></span>
+    <span class="sub">${rest.map(c=>`<span>${c[0]} <b>${c[1]==='n'?fmt(r.n):ar(r[c[1]])}</b></span>`).join('')}<span class="pill ${SC[r.s]}">${r.s}</span><span class="lnk">عرض ↗</span></span></a>`}).join('')}</div>`;
 }
 document.querySelectorAll('#tabs .tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#tabs .tab').forEach(x=>x.setAttribute('aria-selected',x===b)); renderTable(b.dataset.t);}));
 renderTable('topV');
@@ -363,7 +424,9 @@ renderCards();
 
 // nav highlight
 const links=[...document.querySelectorAll('#nav a')];
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-40% 0px -55% 0px'});
+const navWrap=$('#nav');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>{const on=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('on',on);if(on){const r=a.getBoundingClientRect(),w=navWrap.getBoundingClientRect();if(r.left<w.left+20||r.right>w.right-20){navWrap.scrollBy({left:(r.left+r.width/2)-(w.left+w.width/2),behavior:'smooth'});}}});}}),{rootMargin:'-40% 0px -55% 0px'});
+const tt=$('#toTop'); addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>700),{passive:true}); tt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 document.querySelectorAll('main section').forEach(s=>io.observe(s));
 
 // charts
