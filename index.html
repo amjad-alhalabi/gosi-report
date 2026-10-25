@@ -138,7 +138,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-block:24px 40px;
 footer p{margin:0 0 6px;max-width:90ch}
 
 @media (max-width:860px){.grid2,.grid3{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.mix{grid-template-columns:repeat(2,minmax(0,1fr))}.chart.tall{height:460px}}
-@media (max-width:480px){.sent-row{grid-template-columns:minmax(0,1fr)}.chev{width:260px;height:260px}}
+@media (max-width:480px){.sent-row{gap:8px}.sent-row div{padding:10px}.sent-row .num{font-size:19px}.sent-row small{font-size:11.5px;line-height:1.5;display:block}}
 
 /* ---- identity backgrounds & mobile refinements ---- */
 :root{--pat:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.045%22%3E%3Cpath%20d%3D%22M8%2010%20Q24%2026%2040%2040%20Q24%2054%208%2070%20L20%2070%20Q36%2055%2052%2040%20Q36%2025%2020%2010Z%22/%3E%3Cpath%20d%3D%22M112%2010%20Q96%2026%2080%2040%20Q96%2054%20112%2070%20L100%2070%20Q84%2055%2068%2040%20Q84%2025%20100%2010Z%22/%3E%3C/g%3E%3C/svg%3E")}
@@ -178,7 +178,7 @@ section:not(.band) + section.band{}
 .mrow .big small{display:block;font-family:var(--f-body);font-weight:500;font-size:11px;color:var(--muted)}
 .mrow .sub{grid-column:2 / 4;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted);align-items:center}
 .mrow .sub b{color:var(--ink);font-weight:600}
-@media (max-width:860px){.sub-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.chev{width:200px;height:200px;inset-inline-end:-80px;top:10px;opacity:.55}}
+@media (max-width:860px){.sub-kpis{display:flex;flex-wrap:wrap;gap:8px}.sub-kpis span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:4px 12px;font-size:13px}.chev{width:200px;height:200px;inset-inline-end:-80px;top:10px;opacity:.55}}
 @media (max-width:640px){
   .hero .wrap{padding-block:28px 26px}
   .kpis{gap:10px;margin-top:20px} .kpi{padding:12px 14px} .kpi .val{font-size:28px}
